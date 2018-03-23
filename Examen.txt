@@ -1,4 +1,309 @@
- /*-----Queries:
+--------------------------------------------------------
+--  DDL for Table EMPLOYEES
+--------------------------------------------------------
+
+  CREATE TABLE "EMPLOYEES" 
+  ("ID" NUMBER(*,0),
+  "MANAGER_ID" NUMBER(*,0),
+  "DATE_OF_JOINING" DATE,
+  "FULL_NAME" VARCHAR2(255))
+--------------------------------------------------------
+--  DDL for Table PROJECTS
+--------------------------------------------------------
+
+  CREATE TABLE "PROJECTS"
+  ("ID" NUMBER(*,0),
+  "CODE" VARCHAR2(255),
+  "MANAGER_ID" NUMBER(*,0),
+  "BUDGET" NUMBER(10,2),
+  "DATE_OF_BEGINNING" DATE,
+  "DATE_OF_ENDING" DATE)
+--------------------------------------------------------
+--  DDL for Table SALARIES
+--------------------------------------------------------
+
+  CREATE TABLE "SALARIES"
+  ("ID" NUMBER(*,0),
+  "EMPLOYEE_ID" NUMBER(*,0),
+  "PROJECT_ID" NUMBER(*,0),
+  "SALARY" NUMBER(10,2))
+REM INSERTING into EMPLOYEES
+SET DEFINE OFF;
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('1',null,to_date('06/02/18','DD/MM/RR'),'Holmes Manning');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('2','1',to_date('05/08/12','DD/MM/RR'),'Drew Rosario');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('3','1',to_date('05/03/16','DD/MM/RR'),'Emery Kelley');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('4','1',to_date('26/03/11','DD/MM/RR'),'Baker Petersen');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('5','1',to_date('04/06/14','DD/MM/RR'),'Keaton Osborne');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('6','1',to_date('25/11/12','DD/MM/RR'),'Salvador Shannon');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('7','1',to_date('20/11/14','DD/MM/RR'),'Edan Wilkerson');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('8','1',to_date('21/02/18','DD/MM/RR'),'Jerome Carlson');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('9','1',to_date('01/10/14','DD/MM/RR'),'Castor Cotton');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('10','8',to_date('05/02/15','DD/MM/RR'),'Jack Mccarty');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('11','9',to_date('21/06/12','DD/MM/RR'),'Michael Figueroa');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('12','7',to_date('17/01/17','DD/MM/RR'),'Theodore Lowe');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('13','11',to_date('17/10/13','DD/MM/RR'),'Quinn Calderon');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('14','7',to_date('08/03/18','DD/MM/RR'),'Vaughan Hickman');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('15','11',to_date('18/07/13','DD/MM/RR'),'Aquila Herring');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('16','14',to_date('07/12/16','DD/MM/RR'),'Ali Bright');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('17','7',to_date('18/02/16','DD/MM/RR'),'Philip Russo');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('18','7',to_date('16/04/15','DD/MM/RR'),'Samson Bass');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('19','17',to_date('06/10/17','DD/MM/RR'),'Nathan Goff');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('20','10',to_date('11/02/16','DD/MM/RR'),'Reese White');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('21','20',to_date('05/03/13','DD/MM/RR'),'Cruz Yates');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('22','8',to_date('08/02/17','DD/MM/RR'),'Eric Haynes');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('23','7',to_date('24/11/13','DD/MM/RR'),'Rafael Hester');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('24','12',to_date('25/10/14','DD/MM/RR'),'Kermit Gibson');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('25','8',to_date('22/10/13','DD/MM/RR'),'Axel Terrell');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('26','19',to_date('29/11/10','DD/MM/RR'),'Dominic Little');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('27','8',to_date('08/08/14','DD/MM/RR'),'Ezekiel Rogers');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('28','14',to_date('03/07/14','DD/MM/RR'),'Tate Sheppard');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('29','27',to_date('16/11/16','DD/MM/RR'),'Erich Shelton');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('30','14',to_date('11/02/17','DD/MM/RR'),'Otto Wood');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('31','7',to_date('22/06/13','DD/MM/RR'),'Dexter Wilson');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('32','12',to_date('09/03/13','DD/MM/RR'),'Ulysses Craft');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('33','27',to_date('21/11/11','DD/MM/RR'),'Bernard Salazar');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('34','17',to_date('17/10/12','DD/MM/RR'),'Tyler Reyes');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('35','35',to_date('25/01/14','DD/MM/RR'),'Plato Carter');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('36','11',to_date('16/11/14','DD/MM/RR'),'Amos Terry');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('37','12',to_date('02/08/10','DD/MM/RR'),'Hamilton Kent');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('38','22',to_date('23/12/15','DD/MM/RR'),'Kenneth Carr');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('39','21',to_date('19/01/11','DD/MM/RR'),'Hasad Curry');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('40','30',to_date('17/08/16','DD/MM/RR'),'Demetrius Cleveland');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('41','8',to_date('01/11/16','DD/MM/RR'),'Bruno Little');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('42','28',to_date('07/12/12','DD/MM/RR'),'Orlando Sanchez');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('43','6',to_date('24/03/13','DD/MM/RR'),'Leo Riley');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('44','35',to_date('06/06/14','DD/MM/RR'),'Aquila Alvarado');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('45','43',to_date('16/01/18','DD/MM/RR'),'Adrian Pena');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('46','39',to_date('27/12/16','DD/MM/RR'),'Walker Allen');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('47','19',to_date('15/03/17','DD/MM/RR'),'Ferdinand Knapp');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('48','24',to_date('18/04/17','DD/MM/RR'),'Graham Dotson');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('49','8',to_date('14/08/16','DD/MM/RR'),'Kermit Macias');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('50','34',to_date('03/11/16','DD/MM/RR'),'Dieter Sweeney');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('51','7',to_date('23/06/10','DD/MM/RR'),'Jonas Pope');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('52','41',to_date('27/09/10','DD/MM/RR'),'Chadwick Knowles');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('53','30',to_date('09/04/10','DD/MM/RR'),'Fulton Lloyd');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('54','21',to_date('19/07/13','DD/MM/RR'),'Colin Hale');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('55','8',to_date('22/06/14','DD/MM/RR'),'Tobias Ford');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('56','11',to_date('12/11/16','DD/MM/RR'),'Leroy Webster');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('57','13',to_date('14/07/10','DD/MM/RR'),'Herrod Abbott');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('58','40',to_date('17/03/10','DD/MM/RR'),'Scott Walton');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('59','30',to_date('02/04/15','DD/MM/RR'),'Jack Harrell');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('60','43',to_date('09/12/17','DD/MM/RR'),'Lane Tanner');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('61','37',to_date('01/11/14','DD/MM/RR'),'Leo Horton');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('62','16',to_date('28/07/10','DD/MM/RR'),'Cairo Hubbard');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('63','29',to_date('18/01/13','DD/MM/RR'),'Benedict Stein');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('64','14',to_date('28/09/14','DD/MM/RR'),'Armand Davidson');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('65','43',to_date('17/01/16','DD/MM/RR'),'Alexander Guthrie');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('66','43',to_date('10/04/17','DD/MM/RR'),'Odysseus Hawkins');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('67','63',to_date('20/06/16','DD/MM/RR'),'Hamish Fernandez');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('68','18',to_date('08/08/11','DD/MM/RR'),'Vincent Morales');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('69','48',to_date('03/06/13','DD/MM/RR'),'Benedict Mcfarland');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('70','39',to_date('25/07/11','DD/MM/RR'),'Bruce Glenn');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('71','65',to_date('03/02/11','DD/MM/RR'),'Kermit Herman');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('72','25',to_date('07/02/18','DD/MM/RR'),'Hilel Calhoun');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('73','50',to_date('17/12/14','DD/MM/RR'),'Nathan Franklin');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('74','19',to_date('27/05/14','DD/MM/RR'),'Axel Ayala');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('75','38',to_date('07/08/10','DD/MM/RR'),'Armand Thornton');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('76','17',to_date('20/05/10','DD/MM/RR'),'Nigel Poole');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('77','43',to_date('08/12/11','DD/MM/RR'),'Chase Sutton');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('78','20',to_date('07/12/15','DD/MM/RR'),'Kieran Camacho');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('79','61',to_date('24/02/16','DD/MM/RR'),'Lewis Holman');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('80','7',to_date('23/04/15','DD/MM/RR'),'Reuben Briggs');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('81','69',to_date('06/03/12','DD/MM/RR'),'Amos Peck');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('82','44',to_date('07/02/16','DD/MM/RR'),'Sylvester Crane');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('83','77',to_date('02/12/10','DD/MM/RR'),'Marshall Mcgowan');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('84','59',to_date('28/01/12','DD/MM/RR'),'Harrison Blanchard');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('85','14',to_date('04/10/17','DD/MM/RR'),'Chancellor Franco');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('86','16',to_date('21/08/11','DD/MM/RR'),'Sean Mcneil');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('87','62',to_date('31/03/15','DD/MM/RR'),'Quamar Lee');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('88','68',to_date('10/02/15','DD/MM/RR'),'Zane Lamb');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('89','8',to_date('05/08/15','DD/MM/RR'),'Slade Gonzalez');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('90','63',to_date('22/05/13','DD/MM/RR'),'Nehru Mcintyre');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('91','70',to_date('11/10/16','DD/MM/RR'),'Clarke Fisher');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('92','33',to_date('04/02/11','DD/MM/RR'),'Honorato Gamble');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('93','66',to_date('21/09/17','DD/MM/RR'),'Clarke Banks');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('94','64',to_date('15/08/15','DD/MM/RR'),'Jakeem Buck');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('95','34',to_date('03/03/17','DD/MM/RR'),'Hakeem Baldwin');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('96','62',to_date('12/07/14','DD/MM/RR'),'Wallace Marquez');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('97','33',to_date('22/10/10','DD/MM/RR'),'Salvador Dawson');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('98','11',to_date('20/05/11','DD/MM/RR'),'Tarik Hale');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('99','94',to_date('11/03/17','DD/MM/RR'),'Brent Holt');
+Insert into EMPLOYEES (ID,MANAGER_ID,DATE_OF_JOINING,FULL_NAME) values ('100','92',to_date('06/03/11','DD/MM/RR'),'Ahmed Pruitt');
+REM INSERTING into PROJECTS
+SET DEFINE OFF;
+Insert into PROJECTS (ID,CODE,MANAGER_ID,BUDGET,DATE_OF_BEGINNING,DATE_OF_ENDING) values ('500','48205501099','9','3338179',to_date('04/01/17','DD/MM/RR'),to_date('01/08/17','DD/MM/RR'));
+Insert into PROJECTS (ID,CODE,MANAGER_ID,BUDGET,DATE_OF_BEGINNING,DATE_OF_ENDING) values ('501','07503320299','3','4547667',to_date('06/03/16','DD/MM/RR'),to_date('19/07/18','DD/MM/RR'));
+Insert into PROJECTS (ID,CODE,MANAGER_ID,BUDGET,DATE_OF_BEGINNING,DATE_OF_ENDING) values ('502','60671426199','3','2756133',to_date('22/05/15','DD/MM/RR'),to_date('31/08/18','DD/MM/RR'));
+Insert into PROJECTS (ID,CODE,MANAGER_ID,BUDGET,DATE_OF_BEGINNING,DATE_OF_ENDING) values ('503','25416709099','10','4361180',to_date('11/09/16','DD/MM/RR'),to_date('08/06/18','DD/MM/RR'));
+Insert into PROJECTS (ID,CODE,MANAGER_ID,BUDGET,DATE_OF_BEGINNING,DATE_OF_ENDING) values ('504','95623169399','3','4810339',to_date('08/08/16','DD/MM/RR'),to_date('14/11/17','DD/MM/RR'));
+Insert into PROJECTS (ID,CODE,MANAGER_ID,BUDGET,DATE_OF_BEGINNING,DATE_OF_ENDING) values ('505','90287939499','4','3847133',to_date('20/01/15','DD/MM/RR'),to_date('30/01/18','DD/MM/RR'));
+Insert into PROJECTS (ID,CODE,MANAGER_ID,BUDGET,DATE_OF_BEGINNING,DATE_OF_ENDING) values ('506','45539051699','8','2432283',to_date('16/10/16','DD/MM/RR'),to_date('19/04/18','DD/MM/RR'));
+Insert into PROJECTS (ID,CODE,MANAGER_ID,BUDGET,DATE_OF_BEGINNING,DATE_OF_ENDING) values ('507','44905736599','5','1507239',to_date('30/05/16','DD/MM/RR'),to_date('07/01/19','DD/MM/RR'));
+Insert into PROJECTS (ID,CODE,MANAGER_ID,BUDGET,DATE_OF_BEGINNING,DATE_OF_ENDING) values ('508','38742806799','4','2106491',to_date('17/06/16','DD/MM/RR'),to_date('19/12/17','DD/MM/RR'));
+Insert into PROJECTS (ID,CODE,MANAGER_ID,BUDGET,DATE_OF_BEGINNING,DATE_OF_ENDING) values ('509','83225953299','2','2110767',to_date('08/12/15','DD/MM/RR'),to_date('09/07/18','DD/MM/RR'));
+Insert into PROJECTS (ID,CODE,MANAGER_ID,BUDGET,DATE_OF_BEGINNING,DATE_OF_ENDING) values ('510','97296031099','10','2165874',to_date('11/07/15','DD/MM/RR'),to_date('08/11/17','DD/MM/RR'));
+REM INSERTING into SALARIES
+SET DEFINE OFF;
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1000','66','504','246593');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1002','85','505','113097');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1004','58','501','415336');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1006','49','509','319048');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1008','31','504','371444');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1010','68','505','381815');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1012','10','502','218830');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1014','72','503','240745');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1016','59','505','332625');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1018','65','508','437504');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1020','13','507','189267');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1022','24','505','317462');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1024','66','505','347129');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1026','93','510','339618');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1028','97','507','169384');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1030','44','506','353187');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1032','92','502','384669');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1034','83','502','159388');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1036','48','506','372958');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1038','53','506','369895');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1040','65','504','369340');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1042','53','509','355777');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1044','43','502','309071');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1046','54','506','152809');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1048','35','504','105988');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1050','52','504','305869');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1052','56','510','195747');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1054','98','507','445394');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1056','41','503','420742');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1058','80','506','425162');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1060','15','507','302715');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1062','90','503','197952');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1064','88','501','399676');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1066','14','502','442807');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1068','67','506','272437');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1070','59','509','446968');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1072','67','502','396649');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1074','95','504','125820');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1076','98','507','388856');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1078','48','502','113766');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1080','100','506','351730');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1082','62','500','314922');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1084','83','510','282034');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1086','47','507','162129');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1088','47','502','113120');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1090','41','509','362949');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1092','49','504','270893');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1094','45','508','330563');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1096','39','510','222184');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1098','39','507','213150');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1100','74','503','245572');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1102','47','502','262037');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1104','87','508','190663');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1106','68','508','227400');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1108','35','501','163362');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1110','77','506','122160');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1112','76','506','199040');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1114','92','508','301195');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1116','16','500','302426');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1118','79','507','271313');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1120','49','501','282381');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1122','80','509','100286');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1124','83','501','205293');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1126','21','508','396935');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1128','74','507','318515');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1130','38','509','214586');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1132','58','500','411230');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1134','99','503','266441');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1136','19','502','201093');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1138','23','505','417231');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1140','63','509','213118');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1142','81','508','339543');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1144','68','504','204732');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1146','55','507','149228');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1148','87','505','149992');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1150','85','501','126183');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1152','86','508','223956');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1154','11','508','337421');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1156','32','504','395027');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1158','23','508','333960');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1160','40','504','224424');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1162','31','504','195693');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1164','95','504','135436');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1166','69','507','102466');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1168','88','510','316763');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1170','87','500','322843');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1172','84','503','131037');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1174','85','503','114872');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1176','47','510','115502');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1178','38','508','395484');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1180','68','503','445254');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1182','74','509','223988');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1184','33','510','347302');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1186','47','503','103696');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1188','35','507','392700');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1190','90','508','428562');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1192','77','502','414363');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1194','17','501','304219');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1196','28','507','172438');
+Insert into SALARIES (ID,EMPLOYEE_ID,PROJECT_ID,SALARY) values ('1198','64','502','101576');
+--------------------------------------------------------
+--  DDL for Index SALARIES_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "SALARIES_PK" ON "SALARIES" ("ID")
+--------------------------------------------------------
+--  DDL for Index PROJECTS_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "PROJECTS_PK" ON "PROJECTS" ("ID")
+--------------------------------------------------------
+--  DDL for Index EMPLOYEES_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "EMPLOYEES_PK" ON "EMPLOYEES" ("ID")
+--------------------------------------------------------
+--  Constraints for Table SALARIES
+--------------------------------------------------------
+
+  ALTER TABLE "SALARIES" ADD CONSTRAINT "SALARIES_PK" PRIMARY KEY ("ID") ENABLE
+  ALTER TABLE "SALARIES" MODIFY ("SALARY" NOT NULL ENABLE)
+  ALTER TABLE "SALARIES" MODIFY ("EMPLOYEE_ID" NOT NULL ENABLE)
+  ALTER TABLE "SALARIES" MODIFY ("ID" NOT NULL ENABLE)
+--------------------------------------------------------
+--  Constraints for Table PROJECTS
+--------------------------------------------------------
+
+  ALTER TABLE "PROJECTS" MODIFY ("BUDGET" NOT NULL ENABLE)
+  ALTER TABLE "PROJECTS" MODIFY ("CODE" NOT NULL ENABLE)
+  ALTER TABLE "PROJECTS" ADD CONSTRAINT "PROJECTS_PK" PRIMARY KEY ("ID") ENABLE
+  ALTER TABLE "PROJECTS" MODIFY ("ID" NOT NULL ENABLE)
+--------------------------------------------------------
+--  Constraints for Table EMPLOYEES
+--------------------------------------------------------
+
+  ALTER TABLE "EMPLOYEES" MODIFY ("FULL_NAME" NOT NULL ENABLE)
+  ALTER TABLE "EMPLOYEES" MODIFY ("DATE_OF_JOINING" NOT NULL ENABLE)
+  ALTER TABLE "EMPLOYEES" ADD CONSTRAINT "EMPLOYEES_PK" PRIMARY KEY ("ID") ENABLE
+  ALTER TABLE "EMPLOYEES" MODIFY ("ID" NOT NULL ENABLE)
+--------------------------------------------------------
+--  Ref Constraints for Table EMPLOYEES
+--------------------------------------------------------
+
+  ALTER TABLE "EMPLOYEES" ADD FOREIGN KEY ("MANAGER_ID") REFERENCES "EMPLOYEES" ("ID") ENABLE
+--------------------------------------------------------
+--  Ref Constraints for Table PROJECTS
+--------------------------------------------------------
+
+  ALTER TABLE "PROJECTS" ADD FOREIGN KEY ("MANAGER_ID") REFERENCES "EMPLOYEES" ("ID") ENABLE
+--------------------------------------------------------
+--  Ref Constraints for Table SALARIES
+--------------------------------------------------------
+
+  ALTER TABLE "SALARIES" ADD FOREIGN KEY ("EMPLOYEE_ID") REFERENCES "EMPLOYEES" ("ID") ENABLE
+  ALTER TABLE "SALARIES" ADD FOREIGN KEY ("PROJECT_ID") REFERENCES "PROJECTS" ("ID") ENABLE
+
+
+
+
+/*-----Queries:
 
 1.Write a SQL query to fetch project code and count of employees (code, counter) sorted by counter in ascending order. example 48205501099, 4
 2.Write a query to fetch employee names of those who are not assigned to any project
@@ -6,5 +311,12 @@
 4.Write a SQL query to fetch each employee with the name of his/her boss in one column named "employee_boss" separated by ' - ' (don't forget the spaces). Example: "Drew Rosario - Holmes Manning", "Emery Kelley - Holmes Manning" (employee name - manager name)
 5.Write a SQL query to fetch all the employees which first name is Kermit 
 ----*/
+
+/*-----
+1. ----*/
+Select  Count(1) From PROJECTS
+Where CODE = 48205501099
+ORDER BY CODE ASC;
+
 
 
