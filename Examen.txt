@@ -1,0 +1,10 @@
+ /*-----Queries:
+
+1.Write a SQL query to fetch project code and count of employees (code, counter) sorted by counter in ascending order. example 48205501099, 4
+2.Write a query to fetch employee names of those who are not assigned to any project
+3.Write a SQL query to fetch all the Employees who are also managers from employees table
+4.Write a SQL query to fetch each employee with the name of his/her boss in one column named "employee_boss" separated by ' - ' (don't forget the spaces). Example: "Drew Rosario - Holmes Manning", "Emery Kelley - Holmes Manning" (employee name - manager name)
+5.Write a SQL query to fetch all the employees which first name is Kermit 
+----*/
+
+
